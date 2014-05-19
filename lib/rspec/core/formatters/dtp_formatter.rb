@@ -28,8 +28,11 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
 
   def dump_summary duration, example_count, failure_count, pending_count
     super
+    output << "------Summary------"
     output << "Tests: #{example_count}...Failures: #{failure_count}...Total_time:#{'%.6f' % duration}...Timestamp: #{@start.iso8601}\n"
+    output << "------Details-------"
     examples.each do |example|
+      output << "------------------"
       send :"dump_summary_example_#{example.execution_result[:status]}", example
     end
   end
@@ -46,7 +49,7 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
     exception = example.execution_result[:exception]
     backtrace = format_backtrace exception.backtrace, example
     report(example.full_description, "-1")
-    output << "exception:\n#{exception.message}\nbacktrace:\n#{backtrace.join "\n"}\n\n"
+    output << "exception:\n\t#{exception.message}\nbacktrace:\n\t#{backtrace.join("\n")}\n\n"
   end
 
   def example_classname example
