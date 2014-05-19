@@ -1,5 +1,12 @@
-Tests: 5...Failures: 2...Total_time:0.005000...Timestamp: 2014-05-19T19:49:05+08:00
-usercase: some example specs should have an attachment......time: 0.000000
+Tests: 5...Failures: 2...Total_time:0.004000...Timestamp: 2014-05-19T19:59:21+08:00
+usercase: some example specs should raise......time: -1
+exception:
+ArgumentError
+backtrace:
+./spec/example_spec.rb:13:in `block (2 levels) in <top (required)>'
+
+usercase: some example specs should be pending......time: 0
+usercase: some example specs should succeed......time: 0.003000
 usercase: some example specs should fail......time: -1
 exception:
 expected: true value
@@ -7,11 +14,4 @@ expected: true value
 backtrace:
 ./spec/example_spec.rb:9:in `block (2 levels) in <top (required)>'
 
-usercase: some example specs should be pending......time: 0
-usercase: some example specs should succeed......time: 0.000000
-usercase: some example specs should raise......time: -1
-exception:
-ArgumentError
-backtrace:
-./spec/example_spec.rb:13:in `block (2 levels) in <top (required)>'
-
+usercase: some example specs should have an attachment......time: 0.000000
