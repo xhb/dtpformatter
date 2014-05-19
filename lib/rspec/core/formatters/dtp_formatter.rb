@@ -15,7 +15,7 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
       if flag == true
         system("#{report_exe} --perf --table db_case_run --key #{key} --value #{value}")
       else
-        output << "can't find #{report_exe}" 
+        output << "can't find report.exe to record performence result\n" 
       end
     end
   end
