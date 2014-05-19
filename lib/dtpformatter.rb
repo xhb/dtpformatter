@@ -1,5 +1,8 @@
-require "dtpformatter/version"
+require 'builder'
+require 'rspec'
 
-module Dtpformatter
-  # Your code goes here...
-end
+require 'rspec/core/formatters/base_formatter'
+require 'rspec/core/formatters/dtp_formatter'
+
+# Make it easier to use
+Dtpformatter = Dtpformatter = RSpec::Core::Formatters::Dtpformatter
