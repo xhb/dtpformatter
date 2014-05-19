@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "dtpformatter"
-  spec.version       = 1.0.0
+  spec.version       = "1.0.0"
   spec.authors       = ["xhb"]
   spec.email         = ["programstart@163.com"]
   spec.description   = %q{use for recording dtp_workload case performance data}
