@@ -1,17 +1,24 @@
-------Summary------Tests: 5...Failures: 2...Total_time:0.004000...Timestamp: 2014-05-19T20:30:13+08:00
-------Details-------------------------usercase: some example specs should have an attachment......time: 0.000000
-------------------usercase: some example specs should raise......time: -1
-exception:
-	ArgumentError
-backtrace:
-	./spec/example_spec.rb:13:in `block (2 levels) in <top (required)>'
-
-------------------usercase: some example specs should be pending......time: 0
-------------------usercase: some example specs should fail......time: -1
+------Summary------
+Tests: 5...Failures: 2...Total_time:0.006000...Timestamp: 2014-05-19T20:31:08+08:00
+------Details-------
+------------------
+usercase: some example specs should succeed......time: 0.004000
+------------------
+usercase: some example specs should fail......time: -1
 exception:
 	expected: true value
      got: false
 backtrace:
 	./spec/example_spec.rb:9:in `block (2 levels) in <top (required)>'
 
-------------------usercase: some example specs should succeed......time: 0.000000
+------------------
+usercase: some example specs should be pending......time: 0
+------------------
+usercase: some example specs should raise......time: -1
+exception:
+	ArgumentError
+backtrace:
+	./spec/example_spec.rb:13:in `block (2 levels) in <top (required)>'
+
+------------------
+usercase: some example specs should have an attachment......time: 0.000000
