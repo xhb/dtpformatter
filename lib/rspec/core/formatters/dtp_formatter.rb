@@ -14,7 +14,7 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
 
       flag = FileTest::exist?(report_exe)
       if flag == true
-        system("#{report_exe} --perf --table db_case_run --key \"#{key}\" --value \'#{value}\';")
+        system("#{report_exe} --perf --table db_case_run --key \"#{key}\" --value \'#{value}\'")
       else
         output << "can't find report.exe to record performence result\n" 
       end
@@ -28,11 +28,11 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
 
   def dump_summary duration, example_count, failure_count, pending_count
     super
-    output << "------Summary------"
+    output << "------Summary------\n"
     output << "Tests: #{example_count}...Failures: #{failure_count}...Total_time:#{'%.6f' % duration}...Timestamp: #{@start.iso8601}\n"
-    output << "------Details-------"
+    output << "------Details-------\n"
     examples.each do |example|
-      output << "------------------"
+      output << "------------------\n"
       send :"dump_summary_example_#{example.execution_result[:status]}", example
     end
   end
