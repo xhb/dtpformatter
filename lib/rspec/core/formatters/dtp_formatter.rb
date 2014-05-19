@@ -6,6 +6,7 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
     if output == STDOUT
       output << "usercase: #{key}......time: #{value}\n"
     else
+      output << "usercase: #{key}......time: #{value}\n"
       system("%DTPDIR%\\bin\\report.exe --perf --table db_case_run --key #{key} --value #{value}")
     end
   end
@@ -28,14 +29,14 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
   end
 
   def dump_summary_example_pending example
-    report(example.full_description, "pending")
+    report(example.full_description, "0")
   end
 
   def dump_summary_example_failed example
     exception = example.execution_result[:exception]
     backtrace = format_backtrace exception.backtrace, example
     report(example.full_description, "-1")
-    output << "#{exception.message}\n#{backtrace.join "\n"}"
+    output << "#{exception.message}\n#{backtrace.join "\n"}\n\n"
   end
 
   def example_classname example
