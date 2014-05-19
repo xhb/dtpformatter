@@ -8,7 +8,8 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
     else
       output << "usercase: #{key}......time: #{value}\n"
       
-      dtp_path = ENV["DTPDIR"] 
+      dtp_path = ENV["DTPDIR"].split(";")[0]
+
       report_exe = "#{dtp_path}\\bin\\report.exe"
 
       flag = FileTest::exist?(report_exe)
