@@ -36,7 +36,7 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
     exception = example.execution_result[:exception]
     backtrace = format_backtrace exception.backtrace, example
     report(example.full_description, "-1")
-    output << "#{exception.message}\n#{backtrace.join "\n"}\n\n"
+    output << "exception:\n#{exception.message}\nbacktrace:\n#{backtrace.join "\n"}\n\n"
   end
 
   def example_classname example
