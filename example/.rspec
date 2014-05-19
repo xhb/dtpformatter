@@ -1,2 +1,4 @@
 --color
 --format Dtpformatter
+--out test.txt
+

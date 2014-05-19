@@ -7,7 +7,16 @@ class RSpec::Core::Formatters::Dtpformatter < RSpec::Core::Formatters::BaseForma
       output << "usercase: #{key}......time: #{value}\n"
     else
       output << "usercase: #{key}......time: #{value}\n"
-      system("%DTPDIR%\\bin\\report.exe --perf --table db_case_run --key #{key} --value #{value}")
+      
+      dtp_path = ENV["DTPDIR"] 
+      report_exe = "#{dtp_path}\\bin\\report.exe"
+
+      flag = FileTest::exist?(report_exe)
+      if flag == true
+        system("#{report_exe} --perf --table db_case_run --key #{key} --value #{value}")
+      else
+        output << "can't find #{report_exe}" 
+      end
     end
   end
 
